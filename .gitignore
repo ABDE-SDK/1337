@@ -21,5 +21,7 @@ core.*
 
 # macOS / Windows
 .DS_Store
-Thumbs.db
+Thumbs.Debug
 
+# External testers
+libftTester/
