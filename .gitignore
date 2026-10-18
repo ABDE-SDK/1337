@@ -23,5 +23,5 @@ core.*
 .DS_Store
 Thumbs.Debug
 
-# External testers
-libftTester/
+# External Libft tester
+CC/libft/libftTester/
