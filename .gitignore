@@ -1,0 +1,25 @@
+
+# Compiled files
+*.o
+*.a
+*.so
+*.out
+
+# Test executables
+test
+a.out
+main
+
+# Debug files
+core
+core.*
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
