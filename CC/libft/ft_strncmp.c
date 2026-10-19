@@ -6,8 +6,13 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 14:11:38 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/19 14:11:41 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/19 14:26:22 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+
+}
