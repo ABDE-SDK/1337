@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 22:12:42 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/19 10:26:05 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/19 10:55:14 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	src_len = ft_strlen(src);
 	i = 0;
 	if (size == 0)
-		return (src_len
-	);
+		return (src_len);
 	while (i < size - 1 && src[i])
 	{
 		dest[i] = src[i];
