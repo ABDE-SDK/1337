@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 20:51:16 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/22 00:04:25 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/22 20:43:46 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
-	size_t	total;
+	size_t	len;
 
 	if (nmemb != 0 && (size > ((size_t) - 1) / nmemb))
 		return (NULL);
-	total = nmemb * size;
-	ptr = malloc(total);
+	len = nmemb * size;
+	ptr = malloc(len);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, total);
-	return (ptr);
+	ft_bzero(ptr, len);
+	return ((void *)ptr);
 }
