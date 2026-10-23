@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 20:54:34 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/19 21:17:32 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/23 14:55:03 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,6 +19,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	str1 = s1;
 	str2 = s2;
+	if (str1 == str2)
+		return (0);
 	i = 0;
 	while (i < n)
 	{
@@ -27,4 +29,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	}
 	return (0);
+}
+#include <string.h>
+#include <stdio.h>
+int	main()
+{
+	void *p = NULL;
+	void *b = NULL;
+	int res = memcmp(p, b, -1);
+
 }
