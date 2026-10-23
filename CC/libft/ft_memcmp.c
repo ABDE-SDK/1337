@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 20:54:34 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/23 14:55:03 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/23 15:14:32 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -29,13 +29,4 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	}
 	return (0);
-}
-#include <string.h>
-#include <stdio.h>
-int	main()
-{
-	void *p = NULL;
-	void *b = NULL;
-	int res = memcmp(p, b, -1);
-
 }

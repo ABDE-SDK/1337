@@ -6,13 +6,13 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 11:17:51 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/23 11:42:35 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/23 15:15:54 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
-
-char	**ft_split(char const *s, char c)
-{
-
-}
+//
+// #include "libft.h"
+//
+// char	**ft_split(char const *s, char c)
+// {
+//
+// }
