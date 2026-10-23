@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 10:53:17 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/23 19:30:54 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/23 19:41:28 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 
 #endif
