@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:21:29 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/18 23:02:15 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/24 11:14:26 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if ((char)c == '\0')
 		return ((char *)s);
-	return (0);
+	return (NULL);
 }
