@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 16:32:52 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/25 17:20:43 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/25 17:59:29 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!dest)
 		return (NULL);
 	i = 0;
-	while (i < len - 1)
+	while (i < len)
+	{
 		dest[i] = f((unsigned int)i, s[i]);
+		i++;
+	}
 	dest[len] = '\0';
 	return (dest);
 }
