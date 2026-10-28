@@ -6,12 +6,11 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 18:48:28 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/25 19:05:28 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/28 16:59:31 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
