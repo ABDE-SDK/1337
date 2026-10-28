@@ -6,12 +6,11 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 08:46:34 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/27 09:12:51 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/28 17:21:25 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 t_list	*ft_lstnew(void *content)
 {
