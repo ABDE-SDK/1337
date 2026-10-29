@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:42:15 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/28 13:06:21 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/29 08:39:41 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
-		while (n--)
+	while (n--)
 	{
 		*(d++) = *(s++);
 	}
