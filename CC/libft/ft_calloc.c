@@ -6,11 +6,13 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 20:51:16 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/23 19:36:27 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/29 08:04:30 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
