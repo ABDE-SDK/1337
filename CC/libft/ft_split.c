@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 11:17:51 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/28 16:58:55 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/31 23:06:32 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,9 @@ static size_t	ft_length(char const *s, char c)
 static void	ft_free(char **dest, size_t wc)
 {
 	while (wc > 0)
+	{
 		wc--;
-	free(dest[wc]);
+		free(dest[wc]);
+	}
 	free(dest);
 }
