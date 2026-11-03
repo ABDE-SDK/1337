@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 11:11:32 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/31 23:44:38 by asidki           ###   ########.fr       */
+/*   Updated: 2026/10/19 13:01:35 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,4 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	dest[dest_len + i] = '\0';
 	return (dest_len + src_len);
-}
-
-#include <stdio.h>
-#include <bsd/string.h>
-
-int main()
-{
-	char *src = "hello";
-	char dest[13] = "world ";
-
-	ft_strlcat(dest, src, 8);
-	printf("%s",dest);
 }

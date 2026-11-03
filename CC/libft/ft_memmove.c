@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 18:18:31 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/27 08:30:08 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/01 15:56:55 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (d > s)
 		while (n--)
 			d[n] = s[n];
-	else if (d < s)
+	else
 		while (n--)
 			*d++ = *s++;
 	return (dest);
