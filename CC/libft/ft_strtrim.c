@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 22:29:06 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/23 11:16:39 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/03 14:53:38 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	start;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;

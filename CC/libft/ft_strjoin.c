@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 11:40:56 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/23 19:38:35 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/03 14:59:45 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s2_len;
 	size_t	total;
 
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	total = s1_len + s2_len + 1;
