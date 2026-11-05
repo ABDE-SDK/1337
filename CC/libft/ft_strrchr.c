@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 13:09:14 by asidki            #+#    #+#             */
-/*   Updated: 2026/10/19 14:04:04 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/05 18:06:20 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	len;
+	size_t	len;
 
 	len = ft_strlen(s);
 	while (len >= 0)
