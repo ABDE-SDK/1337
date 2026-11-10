@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 11:51:41 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/08 12:02:19 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/10 15:12:09 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 
 #include <stdarg.h>
 #include <unistd.h>
-#include <stddef.h>
 
 int	ft_printf(const char *, ...);
-int	ft_strlen(const char *str);
 int	ft_putstr(const char *str);
 int	ft_putnbr(int n);
 int	ft_putchr(char c);

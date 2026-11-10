@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/07 14:15:16 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/07 14:43:11 by asidki           ###   ########.fr       */
+/*   Created: 2026/11/10 15:55:25 by asidki            #+#    #+#             */
+/*   Updated: 2026/11/10 15:57:57 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(const char *str)
+int	ft_putptr(unsigned long ptr)
 {
-	int	len;
+	int	count;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	count = 0;
+
 }

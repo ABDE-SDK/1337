@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 14:19:50 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/07 15:26:52 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/10 15:15:01 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int	ft_putstr(const char *str)
 
 	if (!str)
 		str = "(null)";
-	count = ft_strlen(str);
+	count = 0;
+	while (str[count])
+		count++;
 	if (write(1, str, count) == -1)
 		return (-1);
 	return (count);
