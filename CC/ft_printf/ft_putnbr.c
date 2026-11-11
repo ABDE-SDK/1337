@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 07:45:22 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/10 19:34:48 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/11 16:23:30 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 int	ft_putnbr(int n)
 {
-	int	count;
+	long	nb;
+	int		count;
+	int		ret;
 
+	nb = n;
 	count = 0;
-	if (n == -2147483648)
+	if (nb < 0)
 	{
-		if ((write(1, "-2147483648", 11)) == -1)
+		nb = -nb;
+		if (ft_putchr('-') == -1)
 			return (-1);
-		count = 11;
-		return (count);
+		count++;
 	}
-	if (n < 0)
+	if (nb >= 10)
 	{
-		n = -n;
-		count += ft_putchr('-');
+		ret = ft_putnbr(nb / 10);
+		if (ret == -1)
+			return (-1);
+		count += ret;
 	}
-	if (n >= 10)
-	{
-		count += ft_putnbr(n / 10);
-	}
-	count += ft_putchr(n % 10 + '0');
+	ret = ft_putchr(nb % 10 + '0');
+	if (ret == -1)
+		return (-1);
+	count += ret;
 	return (count);
 }
