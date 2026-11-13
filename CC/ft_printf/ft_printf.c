@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 11:46:51 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/11 17:21:22 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/13 14:38:41 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static int	handle_spec(const char **format, va_list ap)
 		return (ft_putptr(va_arg(ap, unsigned long)));
 	else if (**format == '%')
 		return (ft_putchr('%'));
+	else
+		return (ft_putchr(**format));
 	return (0);
 }
 
