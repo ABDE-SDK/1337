@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 11:46:51 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/13 21:14:45 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/13 21:35:12 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ static int	is_invalide_spec(char c)
 
 	count = 0;
 	ret = ft_putchr('%');
-	if(ret == -1)
+	if (ret == -1)
 		return (-1);
 	count += ret;
 	ret = ft_putchr(c);
-	if(ret == -1)
+	if (ret == -1)
 		return (-1);
 	count += ret;
 	return (count);
