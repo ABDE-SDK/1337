@@ -15,9 +15,9 @@ int main()
 // printf("\n %d characters\n\n%d characters", b);
 //
 	// int a = printf("%%%") ;
-	int a = printf("%ksdfghjklkjbvgfertyuih") ;
+	int a = printf("%s", "hello - world") ;
 	printf("\n");
-	int b = ft_printf("%ksdfghjklkjbvgfertyuih") ;
+	int b = ft_printf("%s", "hello - world") ;
 	printf("\nthe original :%d\n ", a);
-	printf("\nmine         :%d\n ", b);
+	printf("mine         :%d ", b);
 }

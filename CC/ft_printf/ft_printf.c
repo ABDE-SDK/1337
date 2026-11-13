@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 11:46:51 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/13 14:38:41 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/13 20:05:08 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static int	handle_spec(const char **format, va_list ap)
 {
+	int	ret;
+
 	(*format)++;
 	if (!**format)
 		return (-1);
@@ -32,7 +34,11 @@ static int	handle_spec(const char **format, va_list ap)
 	else if (**format == '%')
 		return (ft_putchr('%'));
 	else
-		return (ft_putchr(**format));
+	{
+		ret = ft_putchr('%');
+		ret += ft_putchr(**format);
+		return (ret);
+	}
 	return (0);
 }
 
