@@ -6,14 +6,14 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 11:51:41 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/13 18:38:41 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/14 09:40:10 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include <stdarg.h>
 
+# include <stdarg.h>
 # include <unistd.h>
 
 int	ft_printf(const char *format, ...);
@@ -22,6 +22,6 @@ int	ft_putnbr(int n);
 int	ft_putchr(char c);
 int	ft_puthex(unsigned long n, char spec);
 int	ft_putunbr(unsigned int n);
-int	ft_putptr(unsigned long ptr);
+int	ft_putptr(void *p);
 
 #endif

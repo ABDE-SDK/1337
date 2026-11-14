@@ -6,13 +6,13 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 11:46:51 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/13 21:35:12 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/14 09:41:03 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	is_invalide_spec(char c)
+static int	is_invalid_spec(char c)
 {
 	int	ret;
 	int	count;
@@ -45,12 +45,11 @@ static int	handle_spec(const char **format, va_list ap)
 	else if (**format == 'X' || **format == 'x')
 		return (ft_puthex(va_arg(ap, unsigned int), **format));
 	else if (**format == 'p')
-		return (ft_putptr(va_arg(ap, unsigned long)));
+		return (ft_putptr(va_arg(ap, void *)));
 	else if (**format == '%')
 		return (ft_putchr('%'));
 	else
-		return (is_invalide_spec(**format));
-	return (0);
+		return (is_invalid_spec(**format));
 }
 
 int	ft_printf(const char *format, ...)
