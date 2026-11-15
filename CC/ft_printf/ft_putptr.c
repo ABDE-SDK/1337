@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 15:55:25 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/14 09:43:30 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/14 10:06:29 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_putptr(void *p)
 	unsigned long	ptr;
 	int				count;
 	int				ret;
-	
+
 	if (!p)
 		return (ft_putstr("(nil)"));
 	ptr = (unsigned long)p;
