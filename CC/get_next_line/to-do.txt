@@ -1,0 +1,9 @@
+file descriptor under hood;
+
+static variable;
+
+memory allocation;
+
+read() and write();
+
+

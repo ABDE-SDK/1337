@@ -1,0 +1,3 @@
+registers in cpu - the relation with memory(stack) and cpu (LSU, ALU, ...);
+buffer management in printf;
+Flush in printf ()
