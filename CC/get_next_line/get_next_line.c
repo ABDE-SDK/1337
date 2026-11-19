@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 10:41:33 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/19 21:24:39 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/19 21:44:12 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static char	*read_and_stash(int fd, char *stash)
 		old = stash;
 		stash = ft_strjoin(old, buf);
 	}
+	free(buf);
 	return (stash);
 }
 
@@ -53,20 +54,4 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = ft_strdup(stash);
 	return (line);
-}
-
-#include <unistd.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <stdlib.h>
-
-int main()
-{
-	int fd = open("test.txt", O_RDWR | O_TRUNC);
-	char str[] = "hello\nworld\n";
-
-	write(fd, str, sizeof(str));
-
-	char *s = get_next_line(fd);
-	printf("\n the line from GNL:\n%s", s);
 }
