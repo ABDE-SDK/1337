@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 10:41:33 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/19 16:55:03 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/19 21:24:39 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*read_and_stash(int fd, char *stash)
 		bytes_read = read(fd, buf, BUFFER_SIZE);
 		if (bytes_read == -1)
 		{
-			free(buf)
+			free(buf);
 			free(stash);
 			return (NULL);
 		}

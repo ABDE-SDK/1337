@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:55:19 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/19 21:18:18 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/19 21:24:21 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,18 @@ char	*ft_strchr(char *str, char c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char *old, char *new)
+char	*ft_strjoin(char *old, char *new_stash)
 {
 	char	*new_str;
 	char	*temp;
 
-	if (!old && !new)
+	if (!old && !new_stash)
 		return (NULL);
 	if (!old)
-		return (ft_strdup(new));
-	if (!new)
+		return (ft_strdup(new_stash));
+	if (!new_stash)
 		return (ft_strdup(old));
-	new_str = malloc(sizeof(char) * (ft_strlen(old) + ft_strlen(new) + 1));
+	new_str = malloc(sizeof(char) * (ft_strlen(old) + ft_strlen(new_stash) + 1));
 	if (!new_str)
 		return (NULL);
 	temp = new_str;
@@ -58,9 +58,9 @@ char	*ft_strjoin(char *old, char *new)
 	{
 		*temp++ = *old++;
 	}
-	while (*new)
+	while (*new_stash)
 	{
-		*temp++ = *new++;
+		*temp++ = *new_stash++;
 	}
 	*temp = '\0';
 	return (new_str);
