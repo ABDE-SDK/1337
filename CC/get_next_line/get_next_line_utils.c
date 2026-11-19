@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:55:19 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/19 17:30:07 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/19 17:31:26 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ char	*ft_strjoin(char *old, char *new)
 	{
 		*temp++ = *new++;
 	}
+	*temp = '\0';
 	return (new_str);
 }
