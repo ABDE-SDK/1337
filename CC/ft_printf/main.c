@@ -8,9 +8,6 @@ void	test(char *arr)
 
 int	main()
 {
-	char te[] =  {'1', '2', '3'};
-	printf("%s\n", te);
-	test(te);
-	printf("%s", te);
-
+	// dprintf(2, "mine :     %d", ft_printf("%%%"));
+	dprintf(2, "\norigin : %d", printf("%%%"));
 }
