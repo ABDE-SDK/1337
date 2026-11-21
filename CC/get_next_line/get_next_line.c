@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 10:41:33 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/20 17:34:20 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/21 13:04:29 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,14 @@ static char	*clean_and_null(char *ptr)
 static char	*read_and_stash(int fd, char *stash)
 {
 	char	*buf;
-	char	*old;
+	char	*old_stash;
 	ssize_t	bytes_read;
 
-	// Si stash contient déjà un '\\n' (issu du tour précédent), inutile de read()
-	if (stash && ft_strchr(stash, '\n'))
-		return (stash);
 	buf = malloc(sizeof(char) * (size_t)BUFFER_SIZE + 1);
 	if (!buf)
 		return (clean_and_null(stash));
 	bytes_read = 1;
-	while (!ft_strchr(stash, '\n') && bytes_read > 0)
+	while (bytes_read > 0 && !ft_strchr(stash, '\n'))
 	{
 		bytes_read = read(fd, buf, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -40,9 +37,9 @@ static char	*read_and_stash(int fd, char *stash)
 			return (clean_and_null(stash));
 		}
 		buf[bytes_read] = '\0';
-		old = stash;
-		stash = ft_strjoin(old, buf);
-		free(old);
+		old_stash = stash;
+		stash = ft_strjoin(old_stash, buf);
+		free(old_stash);
 		if (!stash)
 			return (clean_and_null(buf));
 	}
