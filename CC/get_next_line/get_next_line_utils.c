@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:55:19 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/20 14:51:20 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/22 12:57:37 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ char	*ft_strchr(char *str, char c)
 			return (str);
 		str++;
 	}
-	if (*str == c)
-		return (str);
 	return (NULL);
 }
 
@@ -80,7 +78,7 @@ char	*ft_strdup(char *str)
 		return (NULL);
 	while (str[i])
 	{
-		dup[i] = str[i];
+		du[i] = str[i];
 		i++;
 	}
 	dup[i] = '\0';
