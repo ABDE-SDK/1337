@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 13:09:15 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/22 09:59:33 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/23 12:14:30 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_list
 #  define BUFFER_SIZE 8
 # endif
 
-char	*get_next_line_bonus(int fd);
+char	*get_next_line(int fd);
 
 size_t	ft_strlen(char *str);
 char	*ft_strchr(char *str, char c);
