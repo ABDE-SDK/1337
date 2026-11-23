@@ -6,13 +6,11 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 10:41:33 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/22 19:10:29 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/23 10:02:09 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "get_next_line_bonus.h"
-#include <unistd.h>
 
 static char	*clean_and_null(char *ptr)
 {
@@ -64,7 +62,7 @@ static char	*get_clean_line(char *stash)
 	return (line);
 }
 
-static char	*clean_stash(char *stash)
+static char	*save_the_remain(char *stash)
 {
 	char	*remain;
 	size_t	i;
@@ -75,17 +73,11 @@ static char	*clean_stash(char *stash)
 	while (stash[i] && stash[i] != '\n')
 		i++;
 	if (!stash[i])
-	{
-		free(stash);
-		return (NULL);
-	}
+		return (clean_and_null(stash));
 	remain = ft_substr(stash, i + 1, ft_strlen(stash) - (i + 1));
 	free(stash);
 	if (remain && !*remain)
-	{
-		free(remain);
-		return (NULL);
-	}
+		return (clean_and_null(remain));
 	return (remain);
 }
 
@@ -100,6 +92,6 @@ char	*get_next_line(int fd)
 	if (!stash)
 		return (NULL);
 	line = get_clean_line(stash);
-	stash = clean_stash(stash);
+	stash = save_the_remain(stash);
 	return (line);
 }
