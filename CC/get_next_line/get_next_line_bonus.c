@@ -6,12 +6,11 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 18:06:10 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/24 13:02:34 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/24 15:45:02 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include <stddef.h>
 
 t_list	*get_node(t_list **head_stash, int fd)
 {
@@ -94,7 +93,19 @@ char	*clean_line_and_save_remain(char **stash)
 	if (!*stash || !**stash)
 		return (NULL);
 	i = 0;
-	while ((*stash)[i])
+	while ((*stash)[i] && (*stash)[i] != '\n')
+		i++;
+	if ((*stash)[i] == '\n')
+		i++;
+	clean_line = ft_substr(*stash, 0, i);
+	if (!clean_line)
+		return (NULL);
+	line = *stash;
+	if (line[i])
+		*stash = ft_substr(line, i, ft_strlen(line) - i);
+	else
+		*stash = NULL;
+	free(line);
 	return (clean_line);
 }
 
@@ -116,6 +127,10 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	line = clean_line_and_save_remain(&fd_node->stash);
-
+	if (!fd_node->stash)
+	{
+		free_node(fd, &head_stash);
+		return (NULL);
+	}
 	return (line);
 }
