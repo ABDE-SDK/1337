@@ -6,16 +6,12 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 18:06:10 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/24 00:11:30 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/24 11:59:49 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include "get_next_line.h"
 #include <stddef.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <unistd.h>
 
 t_list	*get_node(t_list **head_stash, int fd)
 {
@@ -89,23 +85,49 @@ char	*read_until_nl(t_list *node)
 	return (node->stash);
 }
 
+char	*clean_line_and_save_remain(char **stash)
+{
+	char	*line;
+	char	*clean_line;
+	size_t	i;
+
+	i = 0;
+	if (!*stash || !**stash)
+		return (NULL);
+	line = *stash;
+	while (line[i] && line[i] != '\n')
+		i++;
+	if (line[i] != '\n')
+		i++;
+	clean_line = ft_substr(line, 0, i);
+	if (!clean_line)
+		return (NULL);
+	free(*stash);
+	*stash = ft_substr(line, i, ft_strlen(line) - i);
+	free(line);
+	if (!*stash)
+		return (NULL);
+	return (clean_line);
+}
+
 char	*get_next_line(int fd)
 {
 	static t_list	*head_stash;
 	t_list			*fd_node;
 	char			*line;
 
-	if (fd < 0 && BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	fd_node = get_node(&head_stash, fd);
 	if (!fd_node)
 		return (NULL);
 	fd_node->stash = read_until_nl(fd_node);
-	if (!fd_node)
+	if (!fd_node->stash)
 	{
 		free_node(fd, &head_stash);
 		return (NULL);
 	}
+	line = clean_line_and_save_remain(&fd_node->stash);
 
 	return (line);
 }
