@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 18:06:10 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/23 15:15:33 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/24 00:11:30 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,24 @@ char	*read_until_nl(t_list *node)
 	char	*old_stash;
 	ssize_t	bytes_read;
 
-	buf = malloc(sizeof(char) * (size_t)BUFFER_SIZE);
+	buf = malloc(sizeof(char) * ((size_t)BUFFER_SIZE + 1));
 	if (!buf)
 		return (NULL);
 	bytes_read = read(node->fd, buf, BUFFER_SIZE);
 	while (bytes_read > 0)
 	{
+		buf[bytes_read] = '\0';
 		old_stash = node->stash;
 		node->stash = ft_strjoin(old_stash, buf);
 		free(old_stash);
-		if (node->stash)
-			free_node();
+		if (!node->stash || ft_strchr(buf, '\n'))
+			break ;
+		bytes_read = read(node->fd, buf, BUFFER_SIZE);
 	}
+	free(buf);
+	if (bytes_read == -1 || !node->stash)
+		return (NULL);
+	return (node->stash);
 }
 
 char	*get_next_line(int fd)
@@ -95,6 +101,11 @@ char	*get_next_line(int fd)
 	if (!fd_node)
 		return (NULL);
 	fd_node->stash = read_until_nl(fd_node);
+	if (!fd_node)
+	{
+		free_node(fd, &head_stash);
+		return (NULL);
+	}
 
 	return (line);
 }
