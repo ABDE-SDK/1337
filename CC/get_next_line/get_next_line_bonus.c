@@ -6,7 +6,7 @@
 /*   By: asidki <asidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 18:06:10 by asidki            #+#    #+#             */
-/*   Updated: 2026/11/24 11:59:49 by asidki           ###   ########.fr       */
+/*   Updated: 2026/11/24 13:02:34 by asidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,22 +91,10 @@ char	*clean_line_and_save_remain(char **stash)
 	char	*clean_line;
 	size_t	i;
 
-	i = 0;
 	if (!*stash || !**stash)
 		return (NULL);
-	line = *stash;
-	while (line[i] && line[i] != '\n')
-		i++;
-	if (line[i] != '\n')
-		i++;
-	clean_line = ft_substr(line, 0, i);
-	if (!clean_line)
-		return (NULL);
-	free(*stash);
-	*stash = ft_substr(line, i, ft_strlen(line) - i);
-	free(line);
-	if (!*stash)
-		return (NULL);
+	i = 0;
+	while ((*stash)[i])
 	return (clean_line);
 }
 
