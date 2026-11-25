@@ -1,5 +1,0 @@
-hello_world
-these a
- test
- hillo adam '\n'\
- nmqwd
